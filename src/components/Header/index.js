@@ -2,7 +2,7 @@ import React from 'react'
 import { Container, Navbar, Column } from 'rbx'
 import { Link } from 'react-router-dom'
 import '../../styles/Header.scss'
-import logo from '../../assets/images/logo.png'
+import LogoImage from '../../assets/images/logo.png'
 
 const Header = () => {
   return (
@@ -10,7 +10,7 @@ const Header = () => {
       <Container>
         <Navbar.Brand>
           <Link to='/'>
-            <img src={logo} alt="" />
+            <img src={LogoImage} alt="" />
           </Link>
           <Navbar.Burger
             className="navbar-burger burger"
