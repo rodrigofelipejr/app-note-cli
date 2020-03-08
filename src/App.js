@@ -1,10 +1,10 @@
 import React from 'react'
-import HomeScreen from './screens/home'
 import "./App.scss";
+import Routes from './routes'
 
 const App = () => {
   return (
-    <HomeScreen />
+    <Routes />
   )
 }
 
