@@ -1,6 +1,7 @@
 import React, { Fragment } from 'react'
 import { Column, Section, Title, Container, Card } from 'rbx'
 import Header from '../../../components/Header'
+import RegisterForm from '../../../components/auth/RegisterForm'
 import LogoImage from '../../../assets/images/logo.png'
 import "../../../styles/auth.scss";
 
@@ -28,6 +29,7 @@ const Register = () => (
                   </Title>
                     </Column>
                   </Column.Group>
+                  <RegisterForm />
                 </Section>
               </Card.Content>
             </Card>
