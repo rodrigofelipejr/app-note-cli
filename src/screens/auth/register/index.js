@@ -5,7 +5,7 @@ import RegisterForm from '../../../components/auth/RegisterForm'
 import LogoImage from '../../../assets/images/logo.png'
 import "../../../styles/auth.scss";
 
-const Register = () => (
+const RegisterScreen = () => (
   <Fragment>
     <Header />
 
@@ -42,4 +42,4 @@ const Register = () => (
   </Fragment>
 )
 
-export default Register
+export default RegisterScreen
