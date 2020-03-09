@@ -1,8 +1,9 @@
 import React, { Fragment } from 'react'
+import HeaderLogged from '../../../components/HeaderLogged'
 
 const Notes = () => (
   <Fragment>
-    Notes
+    <HeaderLogged />
   </Fragment>
 )
 

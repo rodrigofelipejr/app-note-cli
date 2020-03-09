@@ -6,6 +6,10 @@ const UserService = {
     const res = await Api.post('/users/login', params)
     localStorage.setItem('user', JSON.stringify(res.data.user))
     localStorage.setItem('token', res.data.token)
+  },
+  logout: () => {
+    localStorage.removeItem('user', null)
+    localStorage.removeItem('token', null)
   }
 }
 

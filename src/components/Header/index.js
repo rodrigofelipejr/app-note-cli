@@ -1,8 +1,8 @@
 import React from 'react'
 import { Container, Navbar, Column } from 'rbx'
 import { Link } from 'react-router-dom'
-import '../../styles/Header.scss'
 import LogoImage from '../../assets/images/logo.png'
+import '../../styles/header.scss'
 
 const Header = () => {
   return (
