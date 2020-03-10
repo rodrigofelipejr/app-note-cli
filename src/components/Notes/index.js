@@ -19,7 +19,19 @@ const Notes = (props) => {
       setNotes(response.data.reverse())
       /* primeira selecionada */
       setCurrentNote(response.data[0])
+    } else {
+      setNotes([])
     }
+  }
+
+  const createNote = async () => {
+    await NoteService.create()
+    fetchNotes()
+  }
+
+  const deleteNote = async (note) => {
+    await NoteService.delete(note._id)
+    fetchNotes()
   }
 
   const selectNote = (id) => {
@@ -49,7 +61,10 @@ const Notes = (props) => {
           <List
             notes={notes}
             selectNote={selectNote}
-            current_note={currentNote} />
+            current_note={currentNote}
+            createNote={createNote}
+            deleteNote={deleteNote}
+          />
         </Menu>
 
         <Column size={12} className="notes-editor" id="notes-editor">
