@@ -1,8 +1,14 @@
 @import './_colors';
 
 nav.navbar {
-  height: 70px;
+  height: 85px;
   border-bottom: 1px solid black;
+
+  &.navbar-logged {
+    .navbar-menu {
+      background-color: $custom-purple;
+    }
+  }
 
   .navbar-brand {
     img {
