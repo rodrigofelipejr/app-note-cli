@@ -1,0 +1,26 @@
+@import "./_colors";
+
+.notes {
+  height: 100%;
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
+
+  .bm-menu {
+    background: white;
+    padding-top: 10px;
+  }
+
+  .list-item.is-active {
+    background-color: $custon-grey-light;
+  }
+
+  .notes-editor {
+    padding: 0;
+    height: calc(100% - 43px);
+
+    .quill {
+      height: 100%;
+    }
+  }
+}
