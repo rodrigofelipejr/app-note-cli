@@ -9,6 +9,7 @@ import "../../styles/header.scss"
 
 const HeaderLogged = (props) => {
   const [redirectToHome, setRedirectToHome] = useState(false)
+  const [user, setUser] = useState(localStorage.getItem('user'))
 
   const logOut = async () => {
     await UserService.logout()
@@ -58,6 +59,7 @@ const HeaderLogged = (props) => {
               <Dropdown.Trigger>
                 <Button className="button" color="white" outlined>
                   <span>Rodrigo ▼</span>
+                  <span>{JSON.parse(user)['name']} ▼</span>
                 </Button>
               </Dropdown.Trigger>
               <Dropdown.Menu>

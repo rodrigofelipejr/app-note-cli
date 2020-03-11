@@ -2,8 +2,11 @@ import React, { Fragment, useState, useEffect } from 'react'
 import { Column, Button } from "rbx";
 import { push as Menu } from 'react-burger-menu'
 import List from "../Notes/List";
+import Editor from '../Editor'
+import Search from './Search'
 import NoteService from '../../services/notes';
 import '../../styles/notes.scss'
+import NotesService from '../../services/notes';
 
 const Notes = (props) => {
   const [notes, setNotes] = useState([]);
@@ -34,6 +37,20 @@ const Notes = (props) => {
     fetchNotes()
   }
 
+  const updateNote = async (oldNote, params) => {
+    const updatedNote = await NoteService.update(oldNote._id, params)
+    const index = notes.indexOf(oldNote)
+    const newNotes = notes
+    newNotes[index] = updatedNote.data
+    setNotes(newNotes)
+    setCurrentNote(updatedNote.data)
+  }
+
+  const searchNotes = async (query) => {
+    const response = await NotesService.search(query)
+    setNotes(response.data)
+  }
+
   const selectNote = (id) => {
     const note = notes.find((note) => {
       return note._id === id;
@@ -51,12 +68,16 @@ const Notes = (props) => {
           disableAutoFocus
           outerContainerId={"notes"}
           customBurgerIcon={false}
-          customCrossIcon={false}>
+          customCrossIcon={false}
+        >
 
           <Column.Group>
             <Column size={10} offset={1}>
-              Search...
-          </Column>
+              <Search
+                searchNotes={searchNotes}
+                fetchNotes={fetchNotes}
+              />
+            </Column>
           </Column.Group>
           <List
             notes={notes}
@@ -68,8 +89,11 @@ const Notes = (props) => {
         </Menu>
 
         <Column size={12} className="notes-editor" id="notes-editor">
-          Editor...
-      </Column>
+          <Editor
+            note={currentNote}
+            updateNote={updateNote}
+          />
+        </Column>
       </Column.Group>
     </Fragment>
   )
