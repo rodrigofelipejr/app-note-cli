@@ -1,5 +1,5 @@
 import React, { Fragment, useState, useEffect } from 'react'
-import { Column, Button } from "rbx";
+import { Column } from "rbx";
 import { push as Menu } from 'react-burger-menu'
 import List from "../Notes/List";
 import Editor from '../Editor'
