@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react'
-import { Column, Section, Title, Container, Card, Button } from 'rbx'
+import { Column, Section, Title, Container, Card } from 'rbx'
 import HeaderLogged from '../../../components/HeaderLogged'
 import UserEditForm from '../../../components/Users/UserEditForm'
 import UserEditPasswordForm from '../../../components/Users/UserEditPasswordForm'

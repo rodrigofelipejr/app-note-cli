@@ -1,5 +1,5 @@
-import React, { Fragment, useState } from 'react'
-import { Navbar, Container, Column, Button, Dropdown } from 'rbx'
+import React, { useState } from 'react'
+import { Navbar, Column, Button, Dropdown } from 'rbx'
 import { Redirect, Link } from "react-router-dom"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faList } from '@fortawesome/free-solid-svg-icons'
